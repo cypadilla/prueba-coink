@@ -1,0 +1,26 @@
+.characters-container{
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 250px 1fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+      "header header header"
+      "sideBar content content"
+      "sideBar content content";
+  header {
+    grid-area: header;
+    background-color: #004B40;
+    color: white;
+    padding: 1em;
+    box-shadow: 1px 2px 4px 0 rgb(21 99 157 / 16%);
+    border-bottom: 1px solid rgba(21,99,157,0.16);
+  }
+  .side-bar{
+    grid-area: sideBar;
+  }
+  .table-container{
+    background-color: #f2f2f2;
+    padding: 50px;
+    grid-area: content;
+  }
+}
