@@ -1,42 +1,64 @@
 <div class="characters-container">
   <header class="header">
-  hola header
+    <div class="d-flex justify-content-between align-items-center">
+      <div class="col-2 d-flex justify-content-between">
+        <img src="../../../assets/logo-header.png" alt="">
+        <i class="bi bi-list" style="font-size: 30px;"></i>
+      </div>
+      <p class="col-9 text-center m-0" style="font-size: 22px;">BACKOFFICE</p>
+      <i class="bi bi-person-circle col-1 d-flex justify-content-end " style="font-size: 30px;"></i>
+    </div>
   </header>
   <div class="side-bar">
-    side
+    <div class="d-flex flex-column justify-content-center align-items-center mt-5 mb-5">
+      <i class="bi bi-person-circle" style="font-size: 100px; color: #D1FBD9;"></i>
+      <span class="mt-3"style="color: #004B40;"> <i class="bi bi-lock-fill"style="color:#004B40;"></i> Jeff </span>
+    </div>
+    <div class="items-menu active">
+      <p>Tarjetas visa en dispensadores</p>
+    </div>
+    <div class="items-menu">
+      <p>Crear Dispensador</p>
+    </div>
+    <div class="items-menu">
+      <p>Monitorear y editar dispensadores</p>
+    </div>
+    <div class="items-menu">
+      <p>Solicitud de tarjetas</p>
+    </div>
   </div>
   <div class="table-container">
     <mat-form-field appearance="standard">
       <mat-label>Filter</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Ex. Mia" #input>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Rick" #input>
     </mat-form-field>
     <div class="mat-elevation-z8">
       <table mat-table matSort [dataSource]="characters" class="col-12">
         <ng-container matColumnDef="id">
-          <th mat-header-cell *matHeaderCellDef> id </th>
+          <th mat-header-cell *matHeaderCellDef> Id </th>
           <td mat-cell *matCellDef="let element"> {{element.id}} </td>
         </ng-container>
 
         <!-- Name Column -->
         <ng-container matColumnDef="name">
-          <th mat-header-cell *matHeaderCellDef> Name </th>
+          <th mat-header-cell *matHeaderCellDef> Nombre </th>
           <td mat-cell *matCellDef="let element"> {{element.name}} </td>
         </ng-container>
 
         <!-- Weight Column -->
         <ng-container matColumnDef="species">
-          <th mat-header-cell *matHeaderCellDef> species </th>
+          <th mat-header-cell *matHeaderCellDef> Especie </th>
           <td mat-cell *matCellDef="let element"> {{element.species}} </td>
         </ng-container>
 
         <!-- Symbol Column -->
         <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> status </th>
+          <th mat-header-cell *matHeaderCellDef> Estado </th>
           <td mat-cell *matCellDef="let element"> {{element.status}} </td>
         </ng-container>
 
         <ng-container matColumnDef="origin">
-          <th mat-header-cell *matHeaderCellDef> origin </th>
+          <th mat-header-cell *matHeaderCellDef> Origen </th>
           <td mat-cell *matCellDef="let element"> {{element.origin.name}} </td>
         </ng-container>
 
@@ -46,7 +68,7 @@
           <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
         </tr>
       </table>
-      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>
+      <mat-paginator [pageSizeOptions]="[10, 25, 100]" showFirstLastButtons aria-label="Select page of users"></mat-paginator>
     </div>
   </div>
 </div>
